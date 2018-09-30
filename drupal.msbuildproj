@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>drupal.NET</AssemblyName>
+    <NoWarn>PHP5015,PHP5011</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/*.php" Exclude="vendor/phpspec/**"/>
+    <Compile Include="**/*.inc" />
+    <Compile Include="**/*.module" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Peachpie.Compiler.Tools" Version="0.9.0-dev" />
+    <PackageReference Include="Peachpie.NET.Sdk" Version="0.9.0-dev" PrivateAssets="Build" />
+  </ItemGroup>
+
+</Project>

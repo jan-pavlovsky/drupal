@@ -18,7 +18,7 @@ else {
    *
    * @internal
    */
-  class HtmlOutputPrinter extends ResultPrinter {
+  class HtmlOutputPrinter extends \PHPUnit_TextUI_ResultPrinter {
     use HtmlOutputPrinterTrait;
 
     /**

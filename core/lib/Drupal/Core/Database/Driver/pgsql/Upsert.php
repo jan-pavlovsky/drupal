@@ -78,6 +78,7 @@ class Upsert extends QueryUpsert {
    */
   public function __toString() {
     // Nothing to do.
+    return "";
   }
 
 }

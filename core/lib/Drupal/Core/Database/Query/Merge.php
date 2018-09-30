@@ -347,6 +347,7 @@ class Merge extends Query implements ConditionInterface {
    *   The prepared query statement.
    */
   public function __toString() {
+    return "";
   }
 
   public function execute() {
