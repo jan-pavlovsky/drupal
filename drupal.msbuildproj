@@ -1,20 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>drupal.NET</AssemblyName>
-    <NoWarn>PHP5015,PHP5011</NoWarn>
+    <NoWarn></NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="**/*.php" Exclude="vendor/phpspec/**"/>
-    <Compile Include="**/*.inc" />
-    <Compile Include="**/*.module" />
+    <Compile Include="vendor/symfony/**/*.php" Exclude="**/Tests/**/*.php;**/Test/**/*.php;**/phpunit*/**/*.php;vendor/symfony/cache/**;vendor\symfony\polyfill-apcu\**" />
+    <Compile Include="vendor/symfony-cmf/**/*.php" Exclude="**/Tests/**/*.php;**/Test/**/*.php" />
+    <Compile Include="vendor/doctrine/**/*.php" Exclude="**/Test/**/*.php" />
+    <Compile Include="vendor/zendframework/**/*.php" Exclude="**/Test/**/*.php;**/benchmark/**/*.php" />
+    <Compile Include="vendor/twig/**/*.php" Exclude="**/Test/**/*.php" />
+    <Compile Include="vendor/psr/**/*.php" Exclude="**/Test/**/*.php" />
+    <Compile Include="vendor/container-interop/**/*.php" Exclude="**/Test/**/*.php" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Peachpie.Compiler.Tools" Version="0.9.0-dev" />
-    <PackageReference Include="Peachpie.NET.Sdk" Version="0.9.0-dev" PrivateAssets="Build" />
+    <Compile Include="core/**/*.php" Exclude="**/Test/**/*.php;**/simpletest/**/*.php;**/tests/**/*.php;**/testing/**/*.php;**/benchmark/**/*.php;**/composer-merge-plugin/**" />
+    <Compile Include="core/**/*.inc" />
+    <Compile Include="core/**/*.module" />
   </ItemGroup>
 
 </Project>
