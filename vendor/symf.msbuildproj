@@ -1,0 +1,15 @@
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>symfony</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="symfony/**/*.php" Exclude="**/Tests/**/*.php;**/Test/**/*.php;**/phpunit*/**/*.php;**/cache/**;**\polyfill-apcu\**" />
+    <Compile Include="symfony-cmf/**/*.php" Exclude="**/Tests/**/*.php;**/Test/**/*.php" />
+    <Compile Include="psr/**/*.php" Exclude="**/Test/**/*.php" />
+    <Compile Include="container-interop/**/*.php" Exclude="**/Test/**/*.php" />
+  </ItemGroup>
+
+</Project>

@@ -2,8 +2,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>drupal.NET</AssemblyName>
-    <NoWarn>PHP5014,PHP5015,PHP0125,PHP5006,PHP5007,PHP5011,PHP5008,PHP5012,PHP5017</NoWarn>
+    <AssemblyName>vendor</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,12 +13,6 @@
     <Compile Include="vendor/twig/**/*.php" Exclude="**/Test/**/*.php;vendor/twig/twig/src/**" />
     <Compile Include="vendor/psr/**/*.php" Exclude="**/Test/**/*.php" />
     <Compile Include="vendor/container-interop/**/*.php" Exclude="**/Test/**/*.php" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="core/**/*.php" Exclude="**/Test/**/*.php;**/simpletest/**/*.php;**/tests/**/*.php;**/testing/**/*.php;**/benchmark/**/*.php;**/composer-merge-plugin/**" />
-    <Compile Include="core/**/*.inc" />
-    <Compile Include="core/**/*.module" />
   </ItemGroup>
 
 </Project>
