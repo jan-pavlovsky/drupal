@@ -4,13 +4,16 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "require": {
-        "composer/installers": "^1.0.24",
+        "composer/installers": "^1.6",
         "wikimedia/composer-merge-plugin": "^1.4",
         "symfony/config": "^3.4",
         "symfony/expression-language": "^3.4",
         "symfony/var-dumper": "^3.4",
         "zendframework/zend-servicemanager": "^3.3",
-        "container-interop/container-interop": "^1.2"
+        "container-interop/container-interop": "^1.2",
+        "symfony/http-kernel": "^3.4",
+        "composer/composer": "^1.8",
+        "symfony/cache": "^3.4"
     },
     "replace": {
         "drupal/core": "^8.6"
