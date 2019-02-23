@@ -164,18 +164,24 @@ abstract class AbstractCache implements CacheInterface, LoggerAwareInterface, Re
     }
 
     private function generateValues($values, &$keys, $default)
-    {
-        try {
-            foreach ($values as $id => $value) {
+    {     
+        foreach ($values as $id => $value) {
+            $key = '';
+            $val = $default;
+            try {
                 if (!isset($keys[$id])) {
                     $id = key($keys);
                 }
                 $key = $keys[$id];
                 unset($keys[$id]);
+            } catch (\Exception $e) {
+                CacheItem::log($this->logger, 'Failed to fetch requested values', ['keys' => array_values($keys), 'exception' => $e]);
+            }
+            
+            //PeachPie fix to allow yield from try/catch block
+            if(isset($key) && $key != '') {
                 yield $key => $value;
             }
-        } catch (\Exception $e) {
-            CacheItem::log($this->logger, 'Failed to fetch requested values', ['keys' => array_values($keys), 'exception' => $e]);
         }
 
         foreach ($keys as $key) {
